@@ -1,0 +1,16 @@
+{
+  "name": "panatssignup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PA Nationals Electron Signup App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Jake Harding",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "electron": "^1.8.3"
+  }
+}
