@@ -55,7 +55,7 @@ const mainMenuTemplate = [
                 label: 'Little League Signup',
                 click(){
                     mainWindow.webContents.executeJavaScript(`
-                        $('#content').html('<object type="text/html" data="llRegisterWindow.html" ></object>');
+                        fillContent('llRegisterWindow.html');
                     `)
                 }
             },
@@ -63,7 +63,7 @@ const mainMenuTemplate = [
                 label: 'OBA Signup',
                 click(){
                     mainWindow.webContents.executeJavaScript(`
-                        $('#content').html('<object type="text/html" data="obaRegisterWindow.html" ></object>');
+                        fillContent('obaRegisterWindow.html');
                     `)
                 }
             },
@@ -71,7 +71,7 @@ const mainMenuTemplate = [
                 label: 'Coaching Signup',
                 click(){
                     mainWindow.webContents.executeJavaScript(`
-                        $('#content').html('<object type="text/html" data="coachRegisterWindow.html" ></object>');
+                        fillContent('coachRegisterWindow.html');
                     `)
                 }
             },
