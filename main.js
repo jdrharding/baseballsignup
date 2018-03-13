@@ -1,6 +1,8 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
+const keys = require(__dirname + '/keys.json');
+const AWS = require('aws-sdk');
 
 const {app, BrowserWindow, Menu} = electron;
 
@@ -8,6 +10,21 @@ let mainWindow;
 let llRegisterWindow;
 let obaRegisterWindow;
 let coachRegisterWindow;
+
+AWS.config.update({"accessKeyId": keys.awsAccessKey, "secretAccessKey": keys.awsSecretKey, "region": keys.region});
+const s3 = new AWS.S3();
+const params = {
+    "Bucket": keys.bucketName,
+    "Key": "llPlayerList.json"
+};
+
+s3.getObject(params, function(err, data) {
+    if (err) console.log(err, err.stack);
+    else {
+        console.log(data);
+        console.log(data.Body.toString());
+    }
+})
 
 app.on('ready', function() {
     mainWindow = new BrowserWindow({});
@@ -29,81 +46,33 @@ app.on('ready', function() {
     Menu.setApplicationMenu(mainMenu);
 })
 
-// Little League App Window Creation
-function createLLWindow(){
-    
-    llRegisterWindow = new BrowserWindow({
-        title: 'New Little League Player Application'
-    });
-
-    llRegisterWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'llRegisterWindow.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
-
-    llRegisterWindow.on('close', function(){
-        llRegisterWindow = null;
-    })
-}
-
-// OBA App Window Creation
-function createOBAWindow(){
-    
-    obaRegisterWindow = new BrowserWindow({
-        title: 'New OBA Player Application'
-    });
-
-    obaRegisterWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'obaRegisterWindow.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
-
-    obaRegisterWindow.on('close', function(){
-        obaRegisterWindow = null;
-    })
-}
-
-// Coach App Window Creation
-function createCoachWindow(){
-    
-    coachRegisterWindow = new BrowserWindow({
-        title: 'New Coaches Application'
-    });
-
-    coachRegisterWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'coachRegisterWindow.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
-
-    coachRegisterWindow.on('close', function(){
-        coachRegisterWindow = null;
-    })
-}
-
 // Create Menu Template
 const mainMenuTemplate = [
     {
         label: 'File',
         submenu: [
             {
-                label: 'New Little League Application',
+                label: 'Little League Signup',
                 click(){
-                    createLLWindow();
+                    mainWindow.webContents.executeJavaScript(`
+                        $('#content').html('<object type="text/html" data="llRegisterWindow.html" ></object>');
+                    `)
                 }
             },
             {
-                label: 'New OBA Application',
+                label: 'OBA Signup',
                 click(){
-                    createOBAWindow();
+                    mainWindow.webContents.executeJavaScript(`
+                        $('#content').html('<object type="text/html" data="obaRegisterWindow.html" ></object>');
+                    `)
                 }
             },
             {
-                label: 'New Coaching Application',
+                label: 'Coaching Signup',
                 click(){
-                    createCoachWindow();
+                    mainWindow.webContents.executeJavaScript(`
+                        $('#content').html('<object type="text/html" data="coachRegisterWindow.html" ></object>');
+                    `)
                 }
             },
             {

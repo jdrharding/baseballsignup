@@ -3,20 +3,27 @@
     <title>PA Nats Signup</title>
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <h1>Port Arthur Nationals Signup</h1>
+    <script src="js/custom.js"></script>
     <div class="wrapper" >
         <nav id="sidebar">
+            <div class="sidebar-header" >
+                <h3>Menu</h3>
+            </div>
 
+            <ul class="list-unstyled components">
+                <li><a href="#">Home</a></li>
+                <li onclick="fillContent('llRegisterWindow.html')"><a href="#">Little League Signup</a></li>
+                <li onclick="fillContent('obaRegisterWindow.html')"><a href="#">OBA Signup</a></li>
+                <li onclick="fillContent('coachRegisterWindow.html')"><a href="#">Coaches Signup</a></li>
+            </ul>
         </nav>
 
-        <div id="content">
-
-            
-        </div>
+        <div id="content"></div>
 
     </div>
 </body>
