@@ -2,15 +2,87 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
     <title>New Little League Player Application</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row centered-form">
-            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Welcome To Hell!<small>j/k lol</small></h3>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <div class="container-fluid">
+        <section class="container">
+            <div class="container-page">
+                <div class="col-md-12">
+                    <h3 class="dark-grey">Little League Player Registration</h3>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label>League</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio">T-Ball (4, 5, 6 yrs.)</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio">Coach Pitch (7, 8 yrs.)</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio">Minor (9, 10 yrs.)</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio">Major (11, 12 yrs.)</label>
+                                </div>
+                            </div>
+			    			<div class="row">
+			    				<div class="form-group col-md-6">
+			                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+			    				</div>
+			    				<div class="form-group col-md-6">
+			    					<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+			    				</div>
+			    			</div>
+			    			<div class="row">
+			    				<div class="form-group col-md-12">
+			                        <input type="text" name="address" id="address" class="form-control input-sm" placeholder="Address">
+			    				</div>
+			    			</div>
+			    			<div class="row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" name="dob" id="dob" class="form-control input-sm" placeholder="Date of Birth">
+                                </div>
+			    				<div class="form-group col-md-4">
+			                        <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone Number">
+			    				</div>
+			    				<div class="form-group col-md-4">
+			    					<input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+			    				</div>
+			    			</div>
+			    			<div class="row">
+			    				<div class="form-group col-md-8">
+			                        <input type="text" name="requests" id="requests" class="form-control input-sm" placeholder="Special Requests">
+			    				</div>
+			    				<div class="form-group col-md-4">
+                                    <select class="form-control placeholder input-sm" id="tshirt">
+                                        <option value="">T-Shirt Size</option>
+                                        <option value="1">Small</option>
+                                        <option value="2">Medium</option>
+                                        <option value="3">Large</option>
+                                        <option value="3">XLarge</option>
+                                    </select>
+			    				</div>
+			    			</div>
+			    			<div class="row">
+			    				<div class="form-group col-md-6">
+			                        <input type="text" name="pgname1" id="pgname1" class="form-control input-sm" placeholder="Parent/Guardian Name">
+			    				</div>
+			    				<div class="form-group col-md-6">
+			    					<input type="text" name="pgphone1" id="pgphone1" class="form-control input-sm" placeholder="Parent/Guardian Phone">
+			    				</div>
+			    			</div>
+			    			<div class="row">
+			    				<div class="form-group col-md-6">
+			                        <input type="text" name="pgname2" id="pgname2" class="form-control input-sm" placeholder="Parent/Guardian Name">
+			    				</div>
+			    				<div class="form-group col-md-6">
+			    					<input type="text" name="pgphone2" id="pgphone2" class="form-control input-sm" placeholder="Parent/Guardian Phone">
+			    				</div>
+			    			</div>
+			    			
+			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    		
+			    		</form>
                     </div>
                 </div>
             </div>

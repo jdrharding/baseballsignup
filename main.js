@@ -27,7 +27,7 @@ s3.getObject(params, function(err, data) {
 })
 
 app.on('ready', function() {
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({width: 1281, height: 800, minWidth: 1281, minHeight: 800});
 
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),

@@ -4,14 +4,18 @@
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 200px;
+    max-width: 200px;
     min-height: 100vh;
+}
+
+#content {
+    width: 100%;
 }
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -100px;
     }
     #sidebar.active {
         margin-left: 0px;
@@ -78,3 +82,7 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
+
+.placeholder{color: grey;}
+select option:first-child{color: grey; display: none;}
+select option{color: #555;}
