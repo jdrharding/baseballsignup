@@ -15,38 +15,68 @@
                 <div class="col-md-12">
                     <h3 class="dark-grey">Little League Player Registration</h3>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" id="ll_form">
+							<div class="row">
+								<div class="col-md-12">
+									<h3>League:</h3>
+								</div>
+							</div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label>League</label>
-                                    <label class="radio-inline"><input type="radio" name="optradio">T-Ball (4, 5, 6 yrs.)</label>
-                                    <label class="radio-inline"><input type="radio" name="optradio">Coach Pitch (7, 8 yrs.)</label>
-                                    <label class="radio-inline"><input type="radio" name="optradio">Minor (9, 10 yrs.)</label>
-                                    <label class="radio-inline"><input type="radio" name="optradio">Major (11, 12 yrs.)</label>
+                                    <label class="radio-inline"><input type="radio" name="league" required>T-Ball (4, 5, 6 yrs.)</label>
+                                    <label class="radio-inline"><input type="radio" name="league" required>Coach Pitch (7, 8 yrs.)</label>
+                                    <label class="radio-inline"><input type="radio" name="league" required>Minor (9, 10 yrs.)</label>
+                                    <label class="radio-inline"><input type="radio" name="league" required>Major (11, 12 yrs.)</label>
                                 </div>
                             </div>
 			    			<div class="row">
 			    				<div class="form-group col-md-6">
-			                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+			                        <input type="text" name="first_name" id="first_name" class="form-control is-valid input-sm" placeholder="First Name*">
 			    				</div>
 			    				<div class="form-group col-md-6">
-			    					<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+			    					<input type="text" name="last_name" id="last_name" class="form-control is-valid input-sm" placeholder="Last Name*">
 			    				</div>
 			    			</div>
 			    			<div class="row">
-			    				<div class="form-group col-md-12">
-			                        <input type="text" name="address" id="address" class="form-control input-sm" placeholder="Address">
+			    				<div class="form-group col-md-4">
+			                        <input type="text" name="address" id="address" class="form-control is-valid input-sm" placeholder="Address*">
+			    				</div>
+			    				<div class="form-group col-md-4">
+			                        <input type="text" name="city" id="city" class="form-control is-valid input-sm" placeholder="City*">
+			    				</div>
+			    				<div class="form-group col-md-4">
+										<select class="form-control placeholder is-valid input-sm" name="province">
+											<option value="">Province*</option>
+											<option>ON</option>
+											<option>AB</option>
+											<option>BC</option>
+											<option>MB</option>
+											<option>NB</option>
+											<option>NL</option>
+											<option>NS</option>
+											<option>NT</option>
+											<option>NU</option>
+											<option>PE</option>
+											<option>QC</option>
+											<option>SK</option>
+											<option>YT</option>
+										</select>
 			    				</div>
 			    			</div>
-			    			<div class="row">
-                                <div class="form-group col-md-4">
-                                    <input type="text" name="dob" id="dob" class="form-control input-sm" placeholder="Date of Birth">
-                                </div>
+			    			<div class="row">                                
+        						<div class="form-group">
+									<div class='input-group date' id='datetimepicker6'>
+										<input type='text' class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
 			    				<div class="form-group col-md-4">
-			                        <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone Number">
+			                        <input type="text" name="phone" id="phone" class="form-control is-valid input-sm" placeholder="Phone Number*">
 			    				</div>
 			    				<div class="form-group col-md-4">
-			    					<input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+			    					<input type="text" name="email" id="email" class="form-control is-valid input-sm" placeholder="Email Address*">
 			    				</div>
 			    			</div>
 			    			<div class="row">
@@ -54,21 +84,21 @@
 			                        <input type="text" name="requests" id="requests" class="form-control input-sm" placeholder="Special Requests">
 			    				</div>
 			    				<div class="form-group col-md-4">
-                                    <select class="form-control placeholder input-sm" id="tshirt">
+                                    <select class="form-control placeholder is-valid input-sm" name="tshirt">
                                         <option value="">T-Shirt Size</option>
-                                        <option value="1">Small</option>
-                                        <option value="2">Medium</option>
-                                        <option value="3">Large</option>
-                                        <option value="3">XLarge</option>
+                                        <option>Small</option>
+                                        <option>Medium</option>
+                                        <option>Large</option>
+                                        <option>XLarge</option>
                                     </select>
 			    				</div>
 			    			</div>
 			    			<div class="row">
 			    				<div class="form-group col-md-6">
-			                        <input type="text" name="pgname1" id="pgname1" class="form-control input-sm" placeholder="Parent/Guardian Name">
+			                        <input type="text" name="pgname1" id="pgname1" class="form-control input-sm" placeholder="Parent/Guardian Name*">
 			    				</div>
 			    				<div class="form-group col-md-6">
-			    					<input type="text" name="pgphone1" id="pgphone1" class="form-control input-sm" placeholder="Parent/Guardian Phone">
+			    					<input type="text" name="pgphone1" id="pgphone1" class="form-control input-sm" placeholder="Parent/Guardian Phone*">
 			    				</div>
 			    			</div>
 			    			<div class="row">
@@ -80,7 +110,7 @@
 			    				</div>
 			    			</div>
 			    			
-			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    			<button type="submit" class="btn btn-info btn-block">Register<span class="glyphicon glyphicon-plus"></span></button>
 			    		
 			    		</form>
                     </div>
